@@ -45,15 +45,15 @@ end
 
 ---Used for `:checkhealth`
 ---See also `:h health-lua`
--- M.check = function()
---   local is_dep_exist, report_msg = M.check_current_dep()
+M.check = function()
+  local is_dep_exist, report_msg = M.check_current_dep()
 
---   health.report_start "Checking dependencies"
---   if is_dep_exist then
---     health.report_ok(report_msg)
---   else
---     health.report_error(report_msg)
---   end
--- end
+  vim.health.report_start "Checking dependencies"
+  if is_dep_exist then
+    vim.health.report_ok(report_msg)
+  else
+    vim.health.report_error(report_msg)
+  end
+end
 
 return M
