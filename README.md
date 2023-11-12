@@ -24,8 +24,8 @@
 
 |Plugin manager|Script|
 |---|---|
-|[vim-plug](https://github.com/junegunn/vim-plug)|`Plug 'ekickx/clipboard-image.nvim'`|
-|[packer.nvim](https://github.com/wbthomason/packer.nvim)|`use 'ekickx/clipboard-image.nvim'`|
+|[vim-plug](https://github.com/junegunn/vim-plug)|`Plug 'dfendr/clipboard-image.nvim'`|
+|[packer.nvim](https://github.com/wbthomason/packer.nvim)|`use 'dfendr/clipboard-image.nvim'`|
 
 ### Usage
 This is the basic usage. If you want to see more you can read [API](/API.md)
@@ -94,7 +94,7 @@ require'clipboard-image'.setup {
 Share your tips [here](https://github.com/ekickx/clipboard-image.nvim/discussions/15)
 
 ## Questions
-You can ask your questions on [discussions](https://github.com/ekickx/clipboard-image.nvim/discussions)
+You can ask your questions on [discussions](https://github.com/dfendr/clipboard-image.nvim/discussions)
 
 ## Contribute
 Read the contribution guide [here](/CONTRIBUTING.md)
