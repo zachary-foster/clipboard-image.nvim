@@ -18,7 +18,8 @@
 ---
 
 > Note: this is the currently maintained fork of ekickx/clipboard-image.nvim
-> They have done most of the work, but has seemingly abandoned the project. This fork will apply fixes and updated as long as ekickx is gone.
+> They have done most of the work, but has seemingly abandoned the project.
+> This fork will apply fixes and updates as long as ekickx is gone.
 
 ### Install
 > ❗ Requirement: **`xclip`** (X11), **`wl-clipboard`** (Wayland), **`pngpaste`** (MacOS)
