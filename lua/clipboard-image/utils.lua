@@ -7,9 +7,8 @@ M.get_os = function()
     return "Windows"
   end
 
-  local this_os =  tostring(io.popen("uname"):read())
-  if this_os == "Linux" and
-      vim.fn.readfile("/proc/version")[1]:lower():match "microsoft" then
+  local this_os = tostring(io.popen("uname"):read())
+  if this_os == "Linux" and vim.fn.readfile("/proc/version")[1]:lower():match "microsoft" then
     this_os = "Wsl"
   end
   return this_os
@@ -24,10 +23,11 @@ M.get_clip_command = function()
     local display_server = os.getenv "XDG_SESSION_TYPE"
     if display_server == "x11" or display_server == "tty" then
       cmd_check = "xclip -selection clipboard -o -t TARGETS"
-      cmd_paste = "xclip -selection clipboard -t image/png -o > '%s'"
+      cmd_paste =
+        "xclip -selection clipboard -t image/png -o | convert PNG:- -resize '10000000@' '%s'"
     elseif display_server == "wayland" then
       cmd_check = "wl-paste --list-types"
-      cmd_paste = "wl-paste --no-newline --type image/png > '%s'"
+      cmd_paste = "wl-paste --no-newline --type image/png | convert PNG:- -resize '10000000@' '%s'"
     end
   elseif this_os == "Darwin" then
     cmd_check = "pngpaste -b 2>&1"
