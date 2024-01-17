@@ -5,7 +5,7 @@ M.config = {
     img_dir = "img",
     img_dir_txt = "img",
     img_name = function()
-      return os.date "%Y-%m-%d-%H-%M-%S"
+      return os.date "%Y-%m-%d-%H-%M-%S.jpg"
     end,
     img_handler = function(img) end,
     affix = "%s",
