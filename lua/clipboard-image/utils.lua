@@ -24,10 +24,11 @@ M.get_clip_command = function()
     if display_server == "x11" or display_server == "tty" then
       cmd_check = "xclip -selection clipboard -o -t TARGETS"
       cmd_paste =
-        "xclip -selection clipboard -t image/png -o | convert PNG:- -resize '10000000@' '%s'"
+        "xclip -selection clipboard -t image/png -o | convert PNG:- jpg:- -resize '10000000@' > '%s.jpg'"
     elseif display_server == "wayland" then
       cmd_check = "wl-paste --list-types"
-      cmd_paste = "wl-paste --no-newline --type image/png | convert PNG:- -resize '10000000@' '%s'"
+      cmd_paste =
+        "wl-paste --no-newline --type image/png | convert PNG:- jpg:- -resize '10000000@' > '%s.jpg'"
     end
   elseif this_os == "Darwin" then
     cmd_check = "pngpaste -b 2>&1"
